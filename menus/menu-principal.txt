@@ -1,0 +1,5 @@
+1;Cadastro de Pessoas
+2;Cadastro de Endereços
+3;Cadastro de Produtos
+4;Pedido de Venda
+0;Sair

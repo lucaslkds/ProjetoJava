@@ -1,0 +1,6 @@
+1;Incluir pessoa
+2;Consultar pessoa
+3;Alterar pessoa
+4;Excluir pessoa
+5;Listar pessoas
+0;Voltar

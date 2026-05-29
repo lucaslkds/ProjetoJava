@@ -1,0 +1,6 @@
+1;Incluir endereço
+2;Consultar endereço
+3;Alterar endereço
+4;Excluir endereço
+5;Listar endereços
+0;Voltar

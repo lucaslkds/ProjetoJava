@@ -1,0 +1,6 @@
+1;Incluir produto
+2;Consultar produto
+3;Alterar produto
+4;Excluir produto
+5;Listar produtos
+0;Voltar

@@ -1,0 +1,6 @@
+1;Incluir pedido
+2;Consultar pedido
+3;Alterar pedido
+4;Excluir pedido
+5;Listar pedidos
+0;Voltar
