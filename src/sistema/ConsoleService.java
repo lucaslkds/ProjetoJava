@@ -7,7 +7,7 @@ import java.nio.charset.StandardCharsets;
 
 public class ConsoleService {
 
-    private ConsoleService() {
+    public ConsoleService() {
     }
 
     public static void configurarUtf8() {
