@@ -4,3 +4,53 @@ podemos usar as coleções Map, queue
 Map para menu e para lista de produtos.
 Queue para fila de atendimento de pedidos
 
+type generico T (validar quando pode usar)
+
+Usar override para exibir os dados da classe
+
+Como esse programa usa as bases do POO (polimorfismo, herança, )
+
+Model - base de dados e 
+View - Interação do usuário com o nosso sistema
+Reposiory - Persistencia, gravar dados 
+Controler - Cuida das interações do sistema, 
+
+MVC - model, view, Controler
+
+Interfaces para gravar, buscar, exluir, ler
+principio da segregação de interfaces (criar varias interfaces para deixar separado em casos de novas regras de negócios)
+
+interfaces usando tipo generico para trabalhar com todos os dados
+
+Validar se tem os principios do Solid
+
+desing patterns
+
+usar singletone para instaciar produtoss
+
+usar factory method para criar os usuários
+
+usar builder para endereço
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
