@@ -1,6 +1,7 @@
 package cadastro;
 
 import modelo.Pessoa;
+import modelo.PessoaFactory;
 import modelo.TipoPessoa;
 import sistema.ArquivoService;
 import sistema.EntradaService;
@@ -65,7 +66,7 @@ public class PessoaCadastro {
         String nome = EntradaService.lerTextoObrigatorio("Nome: ");
         TipoPessoa tipo = escolherTipoPessoa();
 
-        Pessoa pessoa = new Pessoa(codigo, nome, tipo);
+        Pessoa pessoa = PessoaFactory.criarPorTipo(codigo, nome, tipo);
         ArquivoService.adicionarLinha(ARQUIVO, pessoa.toLinhaArquivo());
         LogService.registrar("INCLUSAO", "PESSOA", codigo);
 

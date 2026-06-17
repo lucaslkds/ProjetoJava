@@ -75,7 +75,15 @@ public class EnderecoCadastro {
         String complemento = EntradaService.lerTexto("Complemento: ");
         TipoEndereco tipo = escolherTipoEndereco();
 
-        Endereco endereco = new Endereco(codigo, codigoPessoa, cep, logradouro, numero, complemento, tipo);
+        Endereco endereco = Endereco.builder()
+                .codigo(codigo)
+                .codigoPessoa(codigoPessoa)
+                .cep(cep)
+                .logradouro(logradouro)
+                .numero(numero)
+                .complemento(complemento)
+                .tipoEndereco(tipo)
+                .build();
         ArquivoService.adicionarLinha(ARQUIVO, endereco.toLinhaArquivo());
         LogService.registrar("INCLUSAO", "ENDERECO", codigo);
         System.out.println("Endereço cadastrado com sucesso.");

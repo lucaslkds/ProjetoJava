@@ -15,6 +15,21 @@ import java.util.List;
 public class ProdutoCadastro {
     public static final String ARQUIVO = "dados/produtos.txt";
 
+    private static ProdutoCadastro instancia;
+
+    /**
+     * Singleton: apenas uma instância do cadastro de produtos durante a execução.
+     */
+    private ProdutoCadastro() {
+    }
+
+    public static ProdutoCadastro getInstancia() {
+        if (instancia == null) {
+            instancia = new ProdutoCadastro();
+        }
+        return instancia;
+    }
+
     public void executarMenu() {
         int opcao;
         do {
