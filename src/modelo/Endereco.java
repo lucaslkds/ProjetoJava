@@ -10,15 +10,71 @@ public class Endereco extends Entidade {
     private String complemento;
     private TipoEndereco tipoEndereco;
 
-    public Endereco(String codigo, String codigoPessoa, String cep, String logradouro,
-                    String numero, String complemento, TipoEndereco tipoEndereco) {
-        super(codigo);
-        this.codigoPessoa = codigoPessoa;
-        this.cep = cep;
-        this.logradouro = logradouro;
-        this.numero = numero;
-        this.complemento = complemento;
-        this.tipoEndereco = tipoEndereco;
+    /**
+     * Construtor privado para forçar a criação via Builder.
+     * Isso deixa mais clara a montagem de um objeto que possui muitos campos.
+     */
+    private Endereco(Builder builder) {
+        super(builder.codigo);
+        this.codigoPessoa = builder.codigoPessoa;
+        this.cep = builder.cep;
+        this.logradouro = builder.logradouro;
+        this.numero = builder.numero;
+        this.complemento = builder.complemento;
+        this.tipoEndereco = builder.tipoEndereco;
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public static class Builder {
+        private String codigo;
+        private String codigoPessoa;
+        private String cep;
+        private String logradouro;
+        private String numero;
+        private String complemento;
+        private TipoEndereco tipoEndereco;
+
+        public Builder codigo(String codigo) {
+            this.codigo = codigo;
+            return this;
+        }
+
+        public Builder codigoPessoa(String codigoPessoa) {
+            this.codigoPessoa = codigoPessoa;
+            return this;
+        }
+
+        public Builder cep(String cep) {
+            this.cep = cep;
+            return this;
+        }
+
+        public Builder logradouro(String logradouro) {
+            this.logradouro = logradouro;
+            return this;
+        }
+
+        public Builder numero(String numero) {
+            this.numero = numero;
+            return this;
+        }
+
+        public Builder complemento(String complemento) {
+            this.complemento = complemento;
+            return this;
+        }
+
+        public Builder tipoEndereco(TipoEndereco tipoEndereco) {
+            this.tipoEndereco = tipoEndereco;
+            return this;
+        }
+
+        public Endereco build() {
+            return new Endereco(this);
+        }
     }
 
     public String getCodigoPessoa() {
@@ -83,8 +139,15 @@ public class Endereco extends Entidade {
             return null;
         }
         try {
-            return new Endereco(partes[0], partes[1], partes[2], partes[3], partes[4], partes[5],
-                    TipoEndereco.valueOf(partes[6]));
+            return Endereco.builder()
+                    .codigo(partes[0])
+                    .codigoPessoa(partes[1])
+                    .cep(partes[2])
+                    .logradouro(partes[3])
+                    .numero(partes[4])
+                    .complemento(partes[5])
+                    .tipoEndereco(TipoEndereco.valueOf(partes[6]))
+                    .build();
         } catch (IllegalArgumentException e) {
             return null;
         }

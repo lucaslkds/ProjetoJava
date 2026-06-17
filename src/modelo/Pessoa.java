@@ -39,7 +39,7 @@ public class Pessoa extends Entidade {
             return null;
         }
         try {
-            return new Pessoa(partes[0], partes[1], TipoPessoa.valueOf(partes[2]));
+            return PessoaFactory.criarPorTipo(partes[0], partes[1], TipoPessoa.valueOf(partes[2]));
         } catch (IllegalArgumentException e) {
             return null;
         }
