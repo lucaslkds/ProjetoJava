@@ -17,7 +17,7 @@ public class Main {
 
         PessoaCadastro pessoaCadastro = new PessoaCadastro();
         EnderecoCadastro enderecoCadastro = new EnderecoCadastro();
-        ProdutoCadastro produtoCadastro = new ProdutoCadastro();
+        ProdutoCadastro produtoCadastro = ProdutoCadastro.getInstancia();
         PedidoCadastro pedidoCadastro = new PedidoCadastro();
 
         int opcao;
